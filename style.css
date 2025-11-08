@@ -1,0 +1,246 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f4f5f7;
+  transition: 0.3s;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #111827;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.brand h2 {
+  margin-bottom: 25px;
+}
+
+.menu-item {
+  list-style: none;
+  padding: 12px;
+  margin: 8px 0;
+  background: #1f2937;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-item.active {
+  background: #2563eb;
+}
+
+.menu-item:hover {
+  background: #374151;
+}
+
+/* MAIN */
+.main {
+  margin-left: 260px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.main.shrink {
+  margin-left: 70px;
+}
+
+/* TOPBAR */
+.topbar {
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.topbar button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* PAGE CONTROL */
+.page {
+  display: none;
+  margin-top: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background: #111827;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.add-btn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.deleteBtn,
+.deleteProduct {
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 310px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.close-btn {
+  background: #6b7280;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CHART */
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* SETTINGS */
+.settings-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-btn {
+  padding: 8px 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* DARK MODE */
+.dark {
+  background: #0f172a;
+  color: white;
+}
+
+.dark .topbar {
+  background: #1e293b;
+  color: white;
+}
+
+.dark .card,
+.dark table,
+.dark tbody tr,
+.dark .modal-content,
+.dark .settings-box,
+.dark .chart-container {
+  background: #1e293b;
+  color: white;
+}
+
+.dark thead {
+  background: #0f172a;
+}

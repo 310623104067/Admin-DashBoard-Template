@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karthik Admin Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- ✅ SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <h2><i class="fa-solid fa-chart-line"></i> Admin</h2>
+    </div>
+
+    <ul class="menu">
+      <li class="menu-item active" data-page="dashboardPage"><i class="fa-solid fa-house"></i> Dashboard</li>
+      <li class="menu-item" data-page="usersPage"><i class="fa-solid fa-users"></i> Users</li>
+      <li class="menu-item" data-page="productsPage"><i class="fa-solid fa-box"></i> Products</li>
+      <li class="menu-item" data-page="reportsPage"><i class="fa-solid fa-chart-column"></i> Reports</li>
+      <li class="menu-item" data-page="settingsPage"><i class="fa-solid fa-gear"></i> Settings</li>
+    </ul>
+  </aside>
+
+  <!-- ✅ MAIN -->
+  <main class="main" id="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
+      <h2 id="pageTitle">Dashboard</h2>
+      <button id="darkMode"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <!-- ✅ DASHBOARD PAGE -->
+    <section class="page active" id="dashboardPage">
+      <div class="cards">
+        <div class="card"><h3>Total Users</h3><p>1,250</p></div>
+        <div class="card"><h3>Total Products</h3><p>85</p></div>
+        <div class="card"><h3>Earnings</h3><p>$52,400</p></div>
+        <div class="card"><h3>Conversion</h3><p>4.2%</p></div>
+      </div>
+    </section>
+
+    <!-- ✅ USERS PAGE -->
+    <section class="page" id="usersPage">
+      <h2>User Management</h2>
+
+      <button id="addUserBtn" class="add-btn">+ Add User</button>
+
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody id="userTable">
+          <tr>
+            <td>Karthik</td><td>karthik@example.com</td><td>Active</td>
+            <td><button class="deleteBtn">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ✅ PRODUCTS PAGE -->
+    <section class="page" id="productsPage">
+      <h2>Products</h2>
+
+      <button id="addProductBtn" class="add-btn">+ Add Product</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="productTable">
+          <tr><td>Keyboard</td><td>Electronics</td><td>$40</td><td>120</td><td><button class="deleteProduct">Delete</button></td></tr>
+          <tr><td>Mouse</td><td>Electronics</td><td>$25</td><td>200</td><td><button class="deleteProduct">Delete</button></td></tr>
+          <tr><td>Notebook</td><td>Stationery</td><td>$5</td><td>500</td><td><button class="deleteProduct">Delete</button></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ✅ REPORTS PAGE -->
+    <section class="page" id="reportsPage">
+      <h2>Reports & Analytics</h2>
+
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="userChart"></canvas>
+      </div>
+    </section>
+
+    <!-- ✅ SETTINGS PAGE -->
+    <section class="page" id="settingsPage">
+      <h2>Settings</h2>
+
+      <div class="settings-box">
+        <label>Dark Mode</label>
+        <button id="darkToggle" class="toggle-btn">Toggle</button>
+      </div>
+
+      <div class="settings-box">
+        <label>Notifications</label>
+        <input type="checkbox" checked>
+      </div>
+
+      <div class="settings-box">
+        <label>Edit Profile</label>
+        <input type="text" placeholder="Update your name">
+      </div>
+    </section>
+
+    <!-- ✅ USER MODAL -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h3>Add User</h3>
+        <input type="text" id="userName" placeholder="Enter Name">
+        <input type="email" id="userEmail" placeholder="Enter Email">
+        <button id="saveUser" class="add-btn">Save</button>
+        <button id="closeModal" class="close-btn">Close</button>
+      </div>
+    </div>
+
+    <!-- ✅ PRODUCT MODAL -->
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <h3>Add Product</h3>
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="text" id="productCategory" placeholder="Category">
+        <input type="number" id="productPrice" placeholder="Price">
+        <input type="number" id="productStock" placeholder="Stock">
+        <button id="saveProduct" class="add-btn">Save</button>
+        <button id="closeProductModal" class="close-btn">Close</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
